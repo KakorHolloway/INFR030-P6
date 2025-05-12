@@ -71,3 +71,36 @@ Pour supprimer :
 oc delete pod <nomdupod>
 oc delete -f exemple1/pod.yaml
 ```
+
+## Exemple 2 : Exposer son application 
+
+D'abord on va vérifier qu'en local, nginx s'exécute bien :
+
+```
+oc exec -it nginx -- /bin/sh 
+....
+exit
+```
+
+Mise en place d'un label obligatoire sur le pod nginx pour le service :
+```
+labels:
+  app: nginx
+```
+
+Création du service pour que le selector corresponde au label app: nginx :
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  selector:
+    app: nginx # label du pod cible
+  ports:
+    - protocol: TCP
+      port: 80 # port sur le pod à adresser
+      targetPort: 80 # port d'accès au service
+```
+
