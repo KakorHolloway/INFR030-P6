@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: curl
+spec:
+  containers:
+  - name: curl
+    image: harbor.kakor.ovh/public/curl:latest
+    command: ["/bin/sh", "-c", "curl https://www.google.com && sleep 3600"]
+    securityContext:
+      allowPrivilegeEscalation: true

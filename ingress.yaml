@@ -1,0 +1,19 @@
+https://docs.redhat.com/en/documentation/openshift_container_platform/4.12/html/networking/configuring-routes#route-configuration
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx
+spec:
+  rules:
+    - host: nginx-correction.apps.openshift.kakor.ovh
+      http:
+        paths:
+        - path: ''
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: nginx-svc
+              port:
+                number: 80
+  tls:
+  - {}
