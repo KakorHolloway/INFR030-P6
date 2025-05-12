@@ -28,3 +28,32 @@ Une fois authentifié (attention à ne pas recharger la page même si l'affichag
 Cliquez sur le lien Display Token et copiez dans votre terminal sur VScode la ligne de commande qui à été donné avec oc. 
 
 Pour vérifier que vous êtes authentifiés, lancez la commande ```oc get pod```
+
+## Exemples 1
+
+Listez des pods
+```
+oc get pod 
+oc get pod -n <nomdunamespace>
+oc get pod
+oc get pod oauth-openshift-5d6b6c6576-6xdsm -n openshift-authentication -o json 
+```
+Création d'un pod simple (https://kubernetes.io/docs/concepts/workloads/pods/ ):
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+```
+
+Pour déployer :
+```
+oc apply -f exemple1/pod.yaml
+```
