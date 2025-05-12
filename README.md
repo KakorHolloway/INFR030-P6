@@ -103,4 +103,8 @@ spec:
       port: 80 # port sur le pod à adresser
       targetPort: 80 # port d'accès au service
 ```
+Pour créer le service :
+```
+oc apply -f exemple2/service.yaml
 
+```
