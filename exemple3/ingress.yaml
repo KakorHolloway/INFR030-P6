@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx
+spec:
+  tls:
+  - {}
+  rules:
+  - host: exempleingress.apps.openshift.kakor.ovh
+    http:
+      paths:
+      - backend:
+          service:
+            name: nginx-svc
+            port:
+              number: 80
+        path: /
+        pathType: Prefix

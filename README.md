@@ -124,3 +124,12 @@ oc rsh <nomdupod>
 # exit ou Ctrl + D pour quitter
 ```
 Testez à partir de ce pod l'accès au service nginx-svc
+
+### Exercice 2
+
+A partir de l'exemple 3 et de l'exercice 1.
+
+Créé l'ingress qui va vous permettre d'accéder à votre service nginx via le nom :
+groupe-<numerodevotregroupe>.apps.openshift.kakor.ovh
+
+Vérifiez le fonctionnement de votre ingress en modifiant la page d'acceuil de votre pod nginx
