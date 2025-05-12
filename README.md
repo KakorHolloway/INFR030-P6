@@ -106,5 +106,20 @@ spec:
 Pour créer le service :
 ```
 oc apply -f exemple2/service.yaml
-
+oc get service #pour confirmer
+oc get endpoints # pour vérifier que le service est bien connecté à un port
 ```
+### Exercice 1 :
+Créez un pod nginx, ajoutez le label "test: infr030" 
+
+Associez un service à ce pod nommé nginx-svc. 
+
+Créez un pod à partir de l'image harbor.kakor.ovh/public/curl:latest 
+(n'oubliez pas de mettre un sleep 3600 pour que le conteneur ne s'éteigne pas, regardez la documentation sur les command sur kubernetes.io afin de mettre ce sleep 3600)
+
+Pour vous connecter au pod la commande c'est :
+```
+oc exec -it <nomdupod> -- /bin/sh #ou /bin/bash
+oc rsh <nomdupod>
+```
+Testez à partir de ce pod l'accès au service nginx-svc
