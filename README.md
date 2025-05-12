@@ -59,3 +59,15 @@ Pour déployer :
 ```
 oc apply -f exemple1/pod.yaml
 ```
+
+Afin de dégub un pod et de vérifier les logs :
+
+```
+oc logs <nomdupod> -n <namespace>
+```
+
+Pour supprimer :
+```
+oc delete pod <nomdupod>
+oc delete -f exemple1/pod.yaml
+```
