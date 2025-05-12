@@ -121,5 +121,6 @@ Pour vous connecter au pod la commande c'est :
 ```
 oc exec -it <nomdupod> -- /bin/sh #ou /bin/bash
 oc rsh <nomdupod>
+# exit ou Ctrl + D pour quitter
 ```
 Testez à partir de ce pod l'accès au service nginx-svc
