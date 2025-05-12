@@ -51,6 +51,8 @@ spec:
     image: nginx:1.14.2
     ports:
     - containerPort: 80
+    securityContext:
+      allowPrivilegeEscalation: true
 ```
 
 Pour déployer :
