@@ -133,3 +133,14 @@ Créez l'ingress qui va vous permettre d'accéder à votre service nginx via le 
 groupe-<numerodevotregroupe>.apps.openshift.kakor.ovh
 
 Vérifiez le fonctionnement de votre ingress en modifiant la page d'accueil de votre pod nginx
+
+## Exemple 3 : Créer des configsmaps et des secrets
+
+### Exercice 3
+
+A partir de votre pod nginx, avec son service et l'ingress que vous aviez configurés lors de la dernière séance, créez une configmap qui va contenir un fichier "index.html" que vous monterez sur le pod nginx. 
+
+Si vous avez un fichier html complexe, vous pouvez utiliser la commande ```oc create configmap --from-file....```
+
+Pour vous aider voici la documentation Kubernetes vous permettant de monter la configmap :
+https://kubernetes.io/docs/concepts/configuration/configmap/
