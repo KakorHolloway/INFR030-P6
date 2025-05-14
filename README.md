@@ -158,3 +158,15 @@ Il en existe 3 types principaux :
 - dockerconfigjson
 
 ## Exemple 5 Les deployments
+
+(cf dossier deployment pour un exemple avec httpd)
+
+### Exercice 4
+
+Mettez en place un nouveau deployment, celui-ci doit se nommer mariadb. 
+Ce deployment doit posséder 1 replicas uniquement et utiliser l'image ```mariadb:10.5``` . 
+Montez sur ce deployment un secret nommé "mysql-password" qui permettra de stocker le mot de passe de la base de donné du deployment via la variable d'environnement MYSQL_ROOT_PASSWORD
+
+Une fois que le pod créé est en Running, modifiez le deployment pour utiliser la version mariadb:10.6. 
+
+Une fois en Runnning mettez l'image mariadb:18.58. Puis revenez à la version précédente du deployment sans modifier le fichier yaml. 
