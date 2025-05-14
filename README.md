@@ -134,7 +134,7 @@ groupe-<numerodevotregroupe>.apps.openshift.kakor.ovh
 
 Vérifiez le fonctionnement de votre ingress en modifiant la page d'accueil de votre pod nginx
 
-## Exemple 3 : Créer des configsmaps et des secrets
+## Exemple 4 : Créer des configsmaps et des secrets
 
 ### Exercice 3
 
@@ -144,3 +144,15 @@ Si vous avez un fichier html complexe, vous pouvez utiliser la commande ```oc cr
 
 Pour vous aider voici la documentation Kubernetes vous permettant de monter la configmap :
 https://kubernetes.io/docs/concepts/configuration/configmap/
+
+Correction avec commande configmap :
+oc create configmap index-cm --from-file=index.html=index.html --from-file=image.png=image.png --dry-run=client -o yaml > cm.yaml
+
+### Les secrets
+
+Les secrets sont des objets Kube qui ont pour vocation de stocker des info sensibles. 
+
+Il en existe 3 types principaux :
+- Generic (stocker de la valeur standard)
+- tls (pour les certificats)
+- dockerconfigjson
