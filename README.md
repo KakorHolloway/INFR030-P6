@@ -156,3 +156,5 @@ Il en existe 3 types principaux :
 - Generic (stocker de la valeur standard)
 - tls (pour les certificats)
 - dockerconfigjson
+
+## Exemple 5 Les deployments
