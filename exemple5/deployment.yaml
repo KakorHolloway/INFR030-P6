@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -5,7 +6,7 @@ metadata:
   labels:
     app: httpd
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: httpd
@@ -21,3 +22,26 @@ spec:
           allowPrivilegeEscalation: true
         ports:
         - containerPort: 80
+        resources:
+          limits:
+            cpu: 100m
+            memory: 250Mi
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: httpd-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: httpd-deployment
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
