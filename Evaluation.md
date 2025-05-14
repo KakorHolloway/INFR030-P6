@@ -17,8 +17,10 @@ De fait vous devrez faire ces éléments :
 - Créez un deployment avec l'image phpmyadmin 
 - Créez un deployment d'un seul réplicat avec MySQL
 - Créez le service mysql qui permettra une connexion au deployment MySQL
+- Créez un secret sur le deployment mysql pour avoir en plus le mot de pase root et le mot de passe user
+- Ajoutez à ce dernier les variables d'environnement pour créer une database et un user standard (aide sur le nom des valeurs dans https://hub.docker.com/_/mariadb) 
 - Créez le service phpmyadmin 
 - Créez l'ingress lié à phpmyadmin et testez de vous connecter au site 
 
-Envoyez une capture d'écran du site en fin de TP
+Envoyez une capture d'écran du site en fin de TP qui montre que vous arrivez bien à accéder à la db depuis phpmyadmin. 
 
